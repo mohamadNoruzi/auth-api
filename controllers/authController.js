@@ -66,7 +66,7 @@ const loginUser = async (req, res) => {
             secure: true, 
             httpOnly: false,
             sameSite: 'none',
-            domain: 'https://client-auth-react.onrender.com/',
+            domain: 'client-auth-react.onrender.com',
             }).json(user);
         }
       );
