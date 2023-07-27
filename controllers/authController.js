@@ -62,7 +62,11 @@ const loginUser = async (req, res) => {
         {},
         (err, token) => {
           if (err) throw err;
-          res.cookie("token", token).json(user);
+          res.cookie("token", token,{
+            secure: true, // set to true if your using https or samesite is none
+            // httpOnly: false, // !backend only
+            sameSite: 'none' // set to none for cross-request
+            }).json(user);
         }
       );
     }
