@@ -65,7 +65,8 @@ const loginUser = async (req, res) => {
           res.cookie("token", token,{
             secure: true, 
             httpOnly: false,
-            sameSite: 'none'
+            sameSite: 'none',
+            domain: 'https://client-auth-react.onrender.com/',
             }).json(user);
         }
       );
