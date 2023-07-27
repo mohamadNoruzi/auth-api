@@ -64,8 +64,7 @@ const loginUser = async (req, res) => {
           if (err) throw err;
           res.cookie("token", token,{
             secure: true, 
-            sameSite: 'none',
-            Domain = "localhost:3000"
+            sameSite: 'none'
             }).json(user);
         }
       );
