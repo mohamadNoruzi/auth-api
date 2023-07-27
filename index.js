@@ -11,8 +11,8 @@ mongoose
   .catch((err) => console.log("Database not connected", err));
 
 // middleware
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use("/", require("./routes/authRoutes"));
 
