@@ -62,7 +62,7 @@ const loginUser = async (req, res) => {
         {},
         (err, token) => {
           if (err) throw err;
-          res.res.json({"token": token});
+          res.json({"token": token});
         }
       );
     }
