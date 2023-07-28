@@ -62,12 +62,7 @@ const loginUser = async (req, res) => {
         {},
         (err, token) => {
           if (err) throw err;
-          res.cookie("token", token,{
-            secure: true, 
-            httpOnly: false,
-            sameSite: 'none',
-            domain: 'client-auth-react.onrender.com',
-            }).json(user);
+          res.res.json({"token": token});
         }
       );
     }
