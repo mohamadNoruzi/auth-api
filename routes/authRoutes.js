@@ -14,7 +14,7 @@ const {
 router.use(
   cors({
     credentials: true,
-    origin: "https://client-auth-react.onrender.com",
+    origin: ["https://client-auth-react.onrender.com","http://localhost:3000"],
     methods: ['GET', 'POST'],
   })
 );
