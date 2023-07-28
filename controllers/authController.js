@@ -94,6 +94,7 @@ const getProfile = (req, res) => {
 };
 
 const logout = (req, res) => {
+  console.log("resive");
   const { user } = req.body;
   if (user) {
     res.cookie("token", "null", {
