@@ -93,9 +93,24 @@ const getProfile = (req, res) => {
   }
 };
 
+const logout = (req, res) => {
+  const { user } = req.body;
+  if (user) {
+    res.cookie("token", "null", {
+      secure: true,
+      httpOnly: false,
+      sameSite: "none",
+      domain: "client-auth-react.onrender.com",
+    });
+  } else {
+    res.json({ message: "you are logout already" });
+  }
+};
+
 module.exports = {
   test,
   signup,
   loginUser,
   getProfile,
+  logout,
 };
